@@ -4,6 +4,8 @@
     <title>Velvet Tomes</title>
     <meta name="google-site-verification" content="Wt57u89z0ilNwkXHgOu0QcuHRaBqnWKD0pp7fCNBumA" />
     <link rel="icon" type="image/png" href="icon.png">
+    <!-- إضافة خط Mea Culpa من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
     <style>
         body {
             background: #f9f6f2;
@@ -29,12 +31,12 @@
 
         #bordered {
             border: 2px solid darkred;
-            width: 220px;
+            width: 500px;
             text-align: center;
-            display: inline-block;
+            display: block;
+            margin: 0 auto 18px auto;
             background: #fff;
             border-radius: 8px;
-            margin-bottom: 18px;
             box-shadow: 0 2px 8px rgba(128,0,0,0.07);
         }
 
@@ -69,18 +71,18 @@
             text-align: justify;
         }
 
-       
         .logo {
             text-align: center;
-            font-family: 'Georgia', serif; 
-            font-size: 48px;
+            font-family: 'Mea Culpa', cursive;
+            font-size: 90px;
             font-weight: bold;
-            color: #000; 
+            color: #000;
             margin-top: 30px;
         }
 
         .footer {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin-top: 50px;
@@ -88,10 +90,26 @@
         }
 
         .footer a {
-            color: #ff4500;
             text-decoration: none;
             font-weight: bold;
         }
+
+        .footer p {
+            margin: 4px 0;
+        }
+
+        .footer a.reddit {
+            color: #ff5415;
+        }
+
+        .footer a.youtube {
+            color: red;
+        }
+
+        .footer a.wattpad {
+            color: #ff5415;
+        }
+
     </style>
 </head>
 <body>
@@ -99,41 +117,52 @@
     <div class="logo">Velvet Tomes</div>
 
     <div class="container">
-        <h1 id="bordered">Introduction</h1>
+        <h1 id="bordered">✨Welcome to Velvet Tomes✨</h1>
         <p class="Bordered">
-            This website is dedicated to presenting and reviewing novels.
-            Here, you will find summaries, main ideas, and notable quotes from various novels.
-            In the future, the website will be developed to allow users to discuss novels together.
-            The novels featured are primarily in Arabic, but if users wish,
-            we will provide translations into their preferred languages.
-            In the future, as the website develops, we can also publish users' novels upon their request.
+            Your gateway to the world of Arabic novels, where we uncover the literary treasures crafted by our Arab authors.📚
+            We review and analyze them carefully, and translate them into other languages so the world
+            can experience the beauty and unique spirit of Arabic literature.✍️
+            Velvet Tomes is the place that combines a passion for words and art,
+            giving every novel a voice that can be heard across the globe. 🌟
         </p>
-        <h2>Development</h2>
+        <h2>About Us</h2>
         <p class="Bordered2">
-            This website was created by a beginner, and I have many ideas for its development. 
-            In this section, I will write down all the ideas and features that
-            I hope to add to the website in the future as it grows and improves:
+            Meet the minds behind Velvet Tomes, 
+            the people passionate about sharing the beauty 
+            of Arabic novels with the world.
         </p>
         <ul>
-            <li>Create a sleek, smooth and easy-to-use interface.</li>
-            <li>Add a chat for users to discuss the novel.</li>
-            <li>Enable the user to publish his novels.</li>
-            <li>Adding the feature of translating novels into the user's preferred language</li>
-            <li>Adding artificial intelligence to help the user</li>
-            <li>Add a logo to the website</li>
-            <li>Add site settings</li>
-            <li>Add a search feature to find novels quickly</li>
+            <li>I am Harlyn ✍️, a writer who breathes words and transforms them
+                into worlds full of mystery, mafia, and human conflicts.
+                I write to unveil the hidden aspects of the human soul.
+                On this site, I summarize novels to give you their essence smoothly and calmly🌿,
+                so you can fully grasp their meaning before diving into the full story.</li>
+            <li>I am 1234 💻, the programmer behind this website 🛠️,
+                which aims to provide reviews and translations of Arabic novels 
+                so the world can discover the beauty of Arabic literature. 
+                I love novels of all kinds📖, and I’m passionate about writing;
+                this passion inspired me to create this project and share this literary world with you.</li>
         </ul>
-        <p>Thank you for visiting the site, and I hope you enjoy</p>
+        <p>Velvet Tomes is run by 1234, the programmer and literature enthusiast, 
+           and Harlyn, who brings the stories to life by summarizing and translating Arabic novels.
+           Together, we aim to share the beauty of Arabic literature with readers worldwide. 📖❤️</p>
+        <p>Thank you for visiting the site, and I hope you enjoy.</p>
     </div>
-    <footer class="footer">
-        <p>
-            Click here to Follow me on
-                        <a href="https://www.reddit.com/user/ProfessionalStuff467/" target="_blank">
-                Reddit
-            </a>
-        </p>
-    </footer>
+
+<footer class="footer">
+    <p>
+        Follow 1234 on
+        <a href="https://www.reddit.com/user/ProfessionalStuff467/" target="_blank" class="reddit">Reddit</a>
+    </p>
+    <p>
+        Follow Harlyn on 
+        <a href="https://www.youtube.com/@Harlyn_Darlin" target="_blank" class="youtube">YouTube</a>
+    </p>
+    <p>
+        Follow Harlyn on 
+        <a href="https://www.wattpad.com/user/Harlie-_" target="_blank" class="wattpad">Wattpad</a>
+    </p>
+</footer>
+
 </body>
 </html>
-
