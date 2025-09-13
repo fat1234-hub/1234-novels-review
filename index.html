@@ -28,17 +28,6 @@
             color: darkred;
         }
 
-        #bordered {
-            border: 2px solid darkred;
-            width: 500px;
-            text-align: center;
-            display: block;
-            margin: 0 auto 18px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(128,0,0,0.07);
-        }
-
         .Bordered, .Bordered2 {
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(128,0,0,0.07);
@@ -128,7 +117,6 @@
             border-radius: 8px;
             border: none;
         }
-
     </style>
 </head>
 <body>
@@ -138,7 +126,7 @@
 <!-- نافذة اختيار اللغة -->
 <div class="lang-popup" id="langPopup">
     <div>
-        <p>ما هي اللغة التي تريد أن تكمل بها زيارة الموقع؟ / Which language would you like to continue in? 🌟</p>
+        <p>ما هي اللغة التي تريد أن تكمل بها زيارة الموقع؟ / Which language would you like to continue in?</p>
         <button onclick="chooseLanguage('ar')">العربية</button>
         <button onclick="chooseLanguage('en')">English</button>
     </div>
@@ -146,13 +134,18 @@
 
 <div class="container" id="main-content">
     <h1 id="welcome"></h1>
+
     <p class="Bordered" id="intro"></p>
+
     <h2 id="about-title"></h2>
     <p class="Bordered2" id="about-text"></p>
+
+    <h2>Team</h2>
     <ul>
         <li id="harlyn"></li>
         <li id="programmer"></li>
     </ul>
+
     <p id="team"></p>
     <p id="thanks"></p>
 </div>
@@ -175,24 +168,24 @@
 <script>
 const texts = {
     "ar": {
-        "welcome": "✨مرحباً بكم في Velvet Tomes✨",
-        "intro": "📚✨ موقعنا فضاء أدبي يهدف إلى مدّ جسور بين الكُتّاب والقرّاء في كل أنحاء العالم. نحن نتيح للكتّاب نشر رواياتهم وترجمتها إلى لغات أخرى، كما نتيح للمستفيدين الذين يملكون موافقة من المؤلف نشر أعماله. 💡\nغايتنا أن نُعرّف العالم بالأدب العربي ونمنح فرصة للكتّاب الذين لا يملكون الإمكانيات المادية للنشر الورقي، ليصل صوتهم إلى أبعد مدى. 🚀\nهنا تتحول الكلمة إلى جسر، وتغدو الرواية عالمية. 🌍❤️",
+        "welcome": "مرحباً بكم في Velvet Tomes",
+        "intro": "موقعنا فضاء أدبي يهدف إلى مد جسور بين الكُتّاب والقرّاء في كل أنحاء العالم. نتيح للكتّاب نشر رواياتهم وترجمتها إلى لغات أخرى، ونتيح للمستفيدين الذين يملكون موافقة من المؤلف نشر أعماله. غايتنا تعريف العالم بالأدب العربي ومنح فرصة للكتّاب الذين لا يمتلكون الإمكانيات المادية للنشر الورقي.",
         "aboutTitle": "من نحن",
         "aboutText": "تعرف على العقول المبدعة وراء Velvet Tomes، الأشخاص المتحمسين لمشاركة جمال العالم.",
-        "harlyn": "أنا الكاتبة هارلين ✍️، أتنفّس الكلمات وأحوّلها إلى عوالم مليئة بالغموض، المافيا، والصراعات الإنسانية. أكتب لأكشف الجوانب الخفية من النفس البشرية 🕊️.\nمهمتي في هذا الموقع تكمن في تقييم الروايات وتصميم الأغلفة 🎨، بالإضافة إلى كتابة بعض الروايات ونشرها هنا 📚✨.",
-        "programmer": "أنا 1234 💻، مؤسسة هذا الفضاء الأدبي 📚✨. أحب قراءة وكتابة الروايات، ويهدف منصتنا لربط الكُتّاب بالقرّاء حول العالم. نساعد المؤلفين على نشر أعمالهم وترجمتها، ومنح صوت لمن لا يمتلكون إمكانيات النشر التقليدي. 🚀\nهنا تتحول الكلمات إلى جسور، وتصبح الروايات عالمية. 🌍❤️",
-        "team": "يُدار موقع Velvet Tomes بواسطة 1234 💻، مبرمجة وعاشقة للأدب، وHarlyn ✨، قارئة وكاتبة تُحيي الروايات العربية من خلال التلخيص والترجمة. معاً، نشارك جمال الأدب العربي مع القرّاء حول العالم. 📖❤️",
-        "thanks": "شكراً لزيارتكم الموقع، ونأمل أن تستمتعوا."
+        "harlyn": "أنا الكاتبة هارلين، أتنفّس الكلمات وأحوّلها إلى عوالم مليئة بالغموض والصراعات الإنسانية. أكتب لأكشف الجوانب الخفية من النفس البشرية. مهمتي تقييم الروايات وتصميم الأغلفة، وكتابة بعض الروايات ونشرها هنا.",
+        "programmer": "أنا 1234، مؤسسة هذا الفضاء الأدبي. أحب قراءة وكتابة الروايات، ونهدف لربط الكُتّاب بالقرّاء حول العالم. نساعد المؤلفين على نشر أعمالهم وترجمتها، ومنح صوت لمن لا يمتلكون الإمكانيات التقليدية.",
+        "team": "يُدار موقع Velvet Tomes بواسطة 1234 وHarlyn، لنشارك جمال الأدب العربي مع القرّاء حول العالم.",
+        "thanks": "شكراً لزيارتكم الموقع."
     },
     "en": {
-        "welcome": "✨Welcome to Velvet Tomes✨",
-        "intro": "📚✨ Our platform is a literary space aimed at building bridges between authors and readers all over the world. We allow writers to publish their novels and translate them into other languages, and also allow those with the author's permission to share their works. 💡\nOur goal is to introduce the world to Arabic literature and give opportunities to authors who lack the financial means for printed publication, so their voices can reach far and wide. 🚀\nHere, words become bridges and novels become global. 🌍❤️",
+        "welcome": "Welcome to Velvet Tomes",
+        "intro": "Our platform is a literary space aimed at building bridges between authors and readers worldwide. We allow writers to publish their novels and translate them, and allow those with the author's permission to share their works. Our goal is to introduce the world to Arabic literature and give opportunities to authors who lack resources for printed publication.",
         "aboutTitle": "About Us",
         "aboutText": "Meet the creative minds behind Velvet Tomes, people passionate about sharing the beauty of the literary world.",
-        "harlyn": "I am Harlyn ✍️, a writer who breathes words and transforms them into worlds full of mystery, mafia, and human conflicts. I write to reveal the hidden aspects of the human soul 🕊️.\nMy role on this site includes reviewing novels, designing covers 🎨, as well as writing and publishing some stories here 📚✨.",
-        "programmer": "I am 1234 💻, the founder of this literary space 📚✨. I love reading and writing novels, and our platform aims to connect authors with readers around the world. We help authors publish their works and translate them, giving a voice to those who lack traditional publishing resources. 🚀\nHere, words become bridges, and novels become global. 🌍❤️",
-        "team": "Velvet Tomes is run by 1234 💻, a programmer and literature enthusiast, and Harlyn ✨, a reader and writer who brings Arabic novels to life through summarizing and translation. Together, we share the beauty of Arabic literature with readers worldwide. 📖❤️",
-        "thanks": "Thank you for visiting the site, and we hope you enjoy it."
+        "harlyn": "I am Harlyn, a writer who breathes words and transforms them into worlds full of mystery and human conflicts. I write to reveal the hidden aspects of the human soul. My role includes reviewing novels, designing covers, and writing/publishing some stories.",
+        "programmer": "I am 1234, founder of this literary space. We help authors publish and translate their works, giving a voice to those who lack traditional resources.",
+        "team": "Velvet Tomes is run by 1234 and Harlyn, sharing the beauty of Arabic literature with readers worldwide.",
+        "thanks": "Thank you for visiting the site."
     }
 };
 
