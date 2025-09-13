@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
+    <meta charset="UTF-8">
     <title>Velvet Tomes</title>
-    <meta name="google-site-verification" content="Wt57u89z0ilNwkXHgOu0QcuHRaBqnWKD0pp7fCNBumA" />
     <link rel="icon" type="image/png" href="icon.png">
-    <!-- إضافة خط Mea Culpa من Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
     <style>
         body {
@@ -68,7 +67,6 @@
         p {
             font-size: 16px;
             line-height: 1.6;
-            text-align: justify;
         }
 
         .logo {
@@ -98,59 +96,65 @@
             margin: 4px 0;
         }
 
-        .footer a.reddit {
-            color: #ff5415;
+        .footer a.reddit { color: #ff5415; }
+        .footer a.youtube { color: red; }
+        .footer a.wattpad { color: #ff5415; }
+
+        .lang-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
 
-        .footer a.youtube {
-            color: red;
+        .lang-popup div {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
         }
 
-        .footer a.wattpad {
-            color: #ff5415;
+        .lang-popup button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
         }
 
     </style>
 </head>
 <body>
-    <div class="logo">Velvet Tomes</div>
 
-    <div class="container">
-        <h1 id="bordered">✨Welcome to Velvet Tomes✨</h1>
-        <p class="Bordered">
-            Your gateway to the world of Arabic novels, where we uncover the literary treasures crafted by our Arab authors.📚
-            We review and analyze them carefully, and translate them into other languages so the world
-            can experience the beauty and unique spirit of Arabic literature.✍️
-            Velvet Tomes is the place that combines a passion for words and art,
-            giving every novel a voice that can be heard across the globe. 🌟
-        </p>
-        <h2>About Us</h2>
-        <p class="Bordered2">
-            Meet the minds behind Velvet Tomes, 
-            the people passionate about sharing the beauty 
-            of Arabic novels with the world.
-        </p>
-        <ul>
-            <li>I am Harlyn ✍️, a writer who breathes words and transforms them
-                into worlds full of mystery, mafia, and human conflicts.
-                I write to unveil the hidden aspects of the human soul.
-                On this site, I summarize novels to give you their essence smoothly and calmly🌿,
-                so you can fully grasp their meaning before diving into the full story.</li>
-            <li>I am 1234 💻, the programmer behind this website 🛠️,
-                which aims to provide reviews and translations of Arabic novels 
-                so the world can discover the beauty of Arabic literature. 
-                I love novels of all kinds📖, and I’m passionate about writing;
-                this passion inspired me to create this project and share this literary world with you.</li>
-        </ul>
-        <p>Velvet Tomes is run by 1234, the programmer and literature enthusiast, 
-           and Harlyn, who brings the stories to life by summarizing and translating Arabic novels.
-           Together, we aim to share the beauty of Arabic literature with readers worldwide. 📖❤️</p>
-        <p>Thank you for visiting the site, and I hope you enjoy.</p>
+<div class="logo">Velvet Tomes</div>
+
+<!-- نافذة اختيار اللغة -->
+<div class="lang-popup" id="langPopup">
+    <div>
+        <p>ما هي اللغة التي تريد أن تكمل بها زيارة الموقع؟ / Which language would you like to continue in? 🌟</p>
+        <button onclick="chooseLanguage('ar')">العربية</button>
+        <button onclick="chooseLanguage('en')">English</button>
     </div>
-    <div style="text-align: center; margin: 40px 0;">
-    <a href="newpage.html" style="text-decoration: none; color: darkred; font-weight: bold; font-size: 20px;">
-        novel: "The Alley Killer"
-    </a>
+</div>
+
+<div class="container" id="main-content">
+    <h1 id="welcome"></h1>
+    <p class="Bordered" id="intro"></p>
+    <h2 id="about-title"></h2>
+    <p class="Bordered2" id="about-text"></p>
+    <ul>
+        <li id="harlyn"></li>
+        <li id="programmer"></li>
+    </ul>
+    <p id="team"></p>
+    <p id="thanks"></p>
 </div>
 
 <footer class="footer">
@@ -167,6 +171,54 @@
         <a href="https://www.wattpad.com/user/Harlie-_" target="_blank" class="wattpad">Wattpad</a>
     </p>
 </footer>
+
+<script>
+const texts = {
+    "ar": {
+        "welcome": "✨مرحباً بكم في Velvet Tomes✨",
+        "intro": "📚✨ موقعنا فضاء أدبي يهدف إلى مدّ جسور بين الكُتّاب والقرّاء في كل أنحاء العالم. نحن نتيح للكتّاب نشر رواياتهم وترجمتها إلى لغات أخرى، كما نتيح للمستفيدين الذين يملكون موافقة من المؤلف نشر أعماله. 💡\nغايتنا أن نُعرّف العالم بالأدب العربي ونمنح فرصة للكتّاب الذين لا يملكون الإمكانيات المادية للنشر الورقي، ليصل صوتهم إلى أبعد مدى. 🚀\nهنا تتحول الكلمة إلى جسر، وتغدو الرواية عالمية. 🌍❤️",
+        "aboutTitle": "من نحن",
+        "aboutText": "تعرف على العقول المبدعة وراء Velvet Tomes، الأشخاص المتحمسين لمشاركة جمال العالم.",
+        "harlyn": "أنا الكاتبة هارلين ✍️، أتنفّس الكلمات وأحوّلها إلى عوالم مليئة بالغموض، المافيا، والصراعات الإنسانية. أكتب لأكشف الجوانب الخفية من النفس البشرية 🕊️.\nمهمتي في هذا الموقع تكمن في تقييم الروايات وتصميم الأغلفة 🎨، بالإضافة إلى كتابة بعض الروايات ونشرها هنا 📚✨.",
+        "programmer": "أنا 1234 💻، مؤسسة هذا الفضاء الأدبي 📚✨. أحب قراءة وكتابة الروايات، ويهدف منصتنا لربط الكُتّاب بالقرّاء حول العالم. نساعد المؤلفين على نشر أعمالهم وترجمتها، ومنح صوت لمن لا يمتلكون إمكانيات النشر التقليدي. 🚀\nهنا تتحول الكلمات إلى جسور، وتصبح الروايات عالمية. 🌍❤️",
+        "team": "يُدار موقع Velvet Tomes بواسطة 1234 💻، مبرمجة وعاشقة للأدب، وHarlyn ✨، قارئة وكاتبة تُحيي الروايات العربية من خلال التلخيص والترجمة. معاً، نشارك جمال الأدب العربي مع القرّاء حول العالم. 📖❤️",
+        "thanks": "شكراً لزيارتكم الموقع، ونأمل أن تستمتعوا."
+    },
+    "en": {
+        "welcome": "✨Welcome to Velvet Tomes✨",
+        "intro": "📚✨ Our platform is a literary space aimed at building bridges between authors and readers all over the world. We allow writers to publish their novels and translate them into other languages, and also allow those with the author's permission to share their works. 💡\nOur goal is to introduce the world to Arabic literature and give opportunities to authors who lack the financial means for printed publication, so their voices can reach far and wide. 🚀\nHere, words become bridges and novels become global. 🌍❤️",
+        "aboutTitle": "About Us",
+        "aboutText": "Meet the creative minds behind Velvet Tomes, people passionate about sharing the beauty of the literary world.",
+        "harlyn": "I am Harlyn ✍️, a writer who breathes words and transforms them into worlds full of mystery, mafia, and human conflicts. I write to reveal the hidden aspects of the human soul 🕊️.\nMy role on this site includes reviewing novels, designing covers 🎨, as well as writing and publishing some stories here 📚✨.",
+        "programmer": "I am 1234 💻, the founder of this literary space 📚✨. I love reading and writing novels, and our platform aims to connect authors with readers around the world. We help authors publish their works and translate them, giving a voice to those who lack traditional publishing resources. 🚀\nHere, words become bridges, and novels become global. 🌍❤️",
+        "team": "Velvet Tomes is run by 1234 💻, a programmer and literature enthusiast, and Harlyn ✨, a reader and writer who brings Arabic novels to life through summarizing and translation. Together, we share the beauty of Arabic literature with readers worldwide. 📖❤️",
+        "thanks": "Thank you for visiting the site, and we hope you enjoy it."
+    }
+};
+
+function chooseLanguage(lang) {
+    const popup = document.getElementById('langPopup');
+    const container = document.getElementById('main-content');
+    popup.style.display = 'none';
+
+    if(lang === 'ar') {
+        container.style.direction = 'rtl';
+        container.style.textAlign = 'right';
+    } else {
+        container.style.direction = 'ltr';
+        container.style.textAlign = 'left';
+    }
+
+    document.getElementById('welcome').textContent = texts[lang].welcome;
+    document.getElementById('intro').textContent = texts[lang].intro;
+    document.getElementById('about-title').textContent = texts[lang].aboutTitle;
+    document.getElementById('about-text').textContent = texts[lang].aboutText;
+    document.getElementById('harlyn').textContent = texts[lang].harlyn;
+    document.getElementById('programmer').textContent = texts[lang].programmer;
+    document.getElementById('team').textContent = texts[lang].team;
+    document.getElementById('thanks').textContent = texts[lang].thanks;
+}
+</script>
 
 </body>
 </html>
