@@ -1,216 +1,144 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <title>Velvet Tomes</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: #f9f6f2;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #232025;
-        }
+<meta charset="UTF-8">
+<title>Velvet Tomes</title>
+<link rel="icon" type="image/png" href="icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f6f2; color:#232025; transition: background 0.3s, color 0.3s; }
+  body.dark { background:#1e1e1e; color:#f9f6f2; }
 
-        .container {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 24px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
+  .logo { font-family:'Mea Culpa', cursive; font-size:90px; font-weight:bold; text-align:center; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:1; transition:all 0.5s ease; }
+  .logo.top { position:static; transform:none; margin-bottom:20px; text-align:center; }
 
-        h1, h2 {
-            text-align: center;
-            color: darkred;
-        }
+  .lang-popup { position:fixed; top:0; left:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; flex-direction:column; background:rgba(249,246,242,0.95); z-index:2; opacity:0; pointer-events:none; transition:opacity 0.5s; }
+  .lang-popup.show { opacity:1; pointer-events:auto; }
+  .lang-popup p { font-size:20px; margin-bottom:20px; text-align:center; }
+  .lang-popup button { margin:10px; padding:12px 25px; font-weight:bold; border:none; border-radius:8px; cursor:pointer; background:#e0bcbc; transition:0.3s; font-size:16px; }
+  .lang-popup button:hover { background:darkred; color:#fff; }
 
-        .Bordered, .Bordered2 {
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(128,0,0,0.07);
-            margin-bottom: 18px;
-            background: #fff8f8;
-            border: 1.5px solid #e0bcbc;
-            color: #232025;
-            padding: 14px;
-        }
+  .container { max-width:700px; margin:40px auto; padding:24px; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08); display:none; transition: background 0.3s; }
+  body.dark .container { background:#2a2a2a; }
 
-        ul {
-            list-style-type: disc;
-            background: #fff;
-            border-radius: 8px;
-            padding: 18px 32px;
-            color: #232025;
-            border: 1.5px solid #e0bcbc;
-            box-shadow: 0 2px 8px rgba(128,0,0,0.05);
-        }
+  h1,h2{text-align:center;color:darkred;}
+  .Bordered, .Bordered2 { border-radius:8px; box-shadow:0 2px 8px rgba(128,0,0,0.07); margin-bottom:18px; background:#fff8f8; border:1.5px solid #e0bcbc; color:inherit; padding:14px; transition: background 0.3s; }
+  body.dark .Bordered, body.dark .Bordered2 { background:#3a3a3a; border-color:#555; }
 
-        li {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
+  ul { list-style-type: disc; background:#fff; border-radius:8px; padding:18px 32px; color:#232025; border:1.5px solid #e0bcbc; box-shadow:0 2px 8px rgba(128,0,0,0.05); transition: background 0.3s; }
+  body.dark ul, body.dark li { color:#f9f6f2; background:#3a3a3a; border-color:#555; }
+  li { margin-bottom:10px; font-size:16px; }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
+  footer { display:flex; flex-direction:column; align-items:center; margin-top:50px; font-family:Arial,sans-serif; display:none; }
+  footer a { text-decoration:none; font-weight:bold; margin:5px; transition: transform 0.3s; }
+  footer a:hover { transform:scale(1.1); }
+  footer a.reddit { color:#ff5415; }
+  footer a.youtube { color:red; }
+  footer a.wattpad { color:#ff5415; }
 
-        .logo {
-            text-align: center;
-            font-family: 'Mea Culpa', cursive;
-            font-size: 90px;
-            font-weight: bold;
-            color: #000;
-            margin-top: 30px;
-        }
+  #darkModeBtn, #changeLangBtn { margin-top:10px; padding:10px 20px; cursor:pointer; border-radius:8px; border:none; font-weight:bold; background:#e0bcbc; transition:0.3s; }
+  #darkModeBtn:hover, #changeLangBtn:hover { background:darkred; color:#fff; }
 
-        .footer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-            font-family: Arial, sans-serif;
-        }
-
-        .footer a {
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer p {
-            margin: 4px 0;
-        }
-
-        .footer a.reddit { color: #ff5415; }
-        .footer a.youtube { color: red; }
-        .footer a.wattpad { color: #ff5415; }
-
-        .lang-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .lang-popup div {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .lang-popup button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 8px;
-            border: none;
-        }
-    </style>
+  @media(max-width:600px){ 
+    .logo{font-size:60px;} 
+    .container{padding:16px;} 
+    #darkModeBtn, #changeLangBtn { width:100%; font-size:16px; padding:12px; } 
+  }
+</style>
 </head>
 <body>
 
-<div class="logo">Velvet Tomes</div>
+<div class="logo" id="logo">Velvet Tomes</div>
 
-<!-- نافذة اختيار اللغة -->
 <div class="lang-popup" id="langPopup">
-    <div>
-        <p>ما هي اللغة التي تريد أن تكمل بها زيارة الموقع؟ / Which language would you like to continue in?</p>
-        <button onclick="chooseLanguage('ar')">العربية</button>
-        <button onclick="chooseLanguage('en')">English</button>
-    </div>
+  <p>اختر اللغة / Choose Language:</p>
+  <button onclick="chooseLanguage('ar')">العربية</button>
+  <button onclick="chooseLanguage('en')">English</button>
 </div>
 
 <div class="container" id="main-content">
-    <h1 id="welcome"></h1>
+  <h1 id="welcome"></h1>
+  <p class="Bordered" id="intro"></p>
+  <h2 id="about-title"></h2>
+  <p class="Bordered2" id="about-text"></p>
 
-    <p class="Bordered" id="intro"></p>
+  <h2>Team</h2>
+  <ul>
+    <li id="harlyn"></li>
+    <li id="programmer"></li>
+  </ul>
 
-    <h2 id="about-title"></h2>
-    <p class="Bordered2" id="about-text"></p>
+  <p id="team"></p>
+  <p id="thanks"></p>
 
-    <h2>Team</h2>
-    <ul>
-        <li id="harlyn"></li>
-        <li id="programmer"></li>
-    </ul>
-
-    <p id="team"></p>
-    <p id="thanks"></p>
+  <button id="darkModeBtn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  <button id="changeLangBtn" onclick="showLangPopup()">🌐 Change Language</button>
 </div>
 
-<footer class="footer">
-    <p>
-        Follow 1234 on
-        <a href="https://www.reddit.com/user/ProfessionalStuff467/" target="_blank" class="reddit">Reddit</a>
-    </p>
-    <p>
-        Follow Harlyn on 
-        <a href="https://www.youtube.com/@Harlyn_Darlin" target="_blank" class="youtube">YouTube</a>
-    </p>
-    <p>
-        Follow Harlyn on 
-        <a href="https://www.wattpad.com/user/Harlie-_" target="_blank" class="wattpad">Wattpad</a>
-    </p>
+<footer id="footer">
+  <a href="https://www.reddit.com/user/ProfessionalStuff467/" target="_blank" class="reddit">Reddit</a>
+  <a href="https://www.youtube.com/@Harlyn_Darlin" target="_blank" class="youtube">YouTube</a>
+  <a href="https://www.wattpad.com/user/Harlie-_" target="_blank" class="wattpad">Wattpad</a>
 </footer>
 
 <script>
-const texts = {
-    "ar": {
-        "welcome": "مرحباً بكم في Velvet Tomes",
-        "intro": "موقعنا فضاء أدبي يهدف إلى مد جسور بين الكُتّاب والقرّاء في كل أنحاء العالم. نتيح للكتّاب نشر رواياتهم وترجمتها إلى لغات أخرى، ونتيح للمستفيدين الذين يملكون موافقة من المؤلف نشر أعماله. غايتنا تعريف العالم بالأدب العربي ومنح فرصة للكتّاب الذين لا يمتلكون الإمكانيات المادية للنشر الورقي.",
-        "aboutTitle": "من نحن",
-        "aboutText": "تعرف على العقول المبدعة وراء Velvet Tomes، الأشخاص المتحمسين لمشاركة جمال العالم.",
-        "harlyn": "أنا الكاتبة هارلين، أتنفّس الكلمات وأحوّلها إلى عوالم مليئة بالغموض والصراعات الإنسانية. أكتب لأكشف الجوانب الخفية من النفس البشرية. مهمتي تقييم الروايات وتصميم الأغلفة، وكتابة بعض الروايات ونشرها هنا.",
-        "programmer": "أنا 1234، مؤسسة هذا الفضاء الأدبي. أحب قراءة وكتابة الروايات، ونهدف لربط الكُتّاب بالقرّاء حول العالم. نساعد المؤلفين على نشر أعمالهم وترجمتها، ومنح صوت لمن لا يمتلكون الإمكانيات التقليدية.",
-        "team": "يُدار موقع Velvet Tomes بواسطة 1234 وHarlyn، لنشارك جمال الأدب العربي مع القرّاء حول العالم.",
-        "thanks": "شكراً لزيارتكم الموقع."
-    },
-    "en": {
-        "welcome": "Welcome to Velvet Tomes",
-        "intro": "Our platform is a literary space aimed at building bridges between authors and readers worldwide. We allow writers to publish their novels and translate them, and allow those with the author's permission to share their works. Our goal is to introduce the world to Arabic literature and give opportunities to authors who lack resources for printed publication.",
-        "aboutTitle": "About Us",
-        "aboutText": "Meet the creative minds behind Velvet Tomes, people passionate about sharing the beauty of the literary world.",
-        "harlyn": "I am Harlyn, a writer who breathes words and transforms them into worlds full of mystery and human conflicts. I write to reveal the hidden aspects of the human soul. My role includes reviewing novels, designing covers, and writing/publishing some stories.",
-        "programmer": "I am 1234, founder of this literary space. We help authors publish and translate their works, giving a voice to those who lack traditional resources.",
-        "team": "Velvet Tomes is run by 1234 and Harlyn, sharing the beauty of Arabic literature with readers worldwide.",
-        "thanks": "Thank you for visiting the site."
-    }
+const texts={
+  ar:{
+    welcome:"مرحباً بكم في Velvet Tomes",
+    intro:"موقعنا فضاء أدبي يهدف إلى مد جسور بين الكُتّاب والقرّاء في كل أنحاء العالم. نتيح للكتّاب نشر رواياتهم وترجمتها إلى لغات أخرى، ونتيح للمستفيدين الذين يملكون موافقة من المؤلف نشر أعماله. غايتنا تعريف العالم بالأدب العربي ومنح فرصة للكتّاب الذين لا يمتلكون الإمكانيات المادية للنشر الورقي.",
+    aboutTitle:"من نحن",
+    aboutText:"تعرف على العقول المبدعة وراء Velvet Tomes، الأشخاص المتحمسين لمشاركة جمال العالم.",
+    harlyn:"أنا الكاتبة هارلين، أتنفّس الكلمات وأحوّلها إلى عوالم مليئة بالغموض والصراعات الإنسانية. أكتب لأكشف الجوانب الخفية من النفس البشرية. مهمتي تقييم الروايات وتصميم الأغلفة، وكتابة بعض الروايات ونشرها هنا.",
+    programmer:"أنا 1234، مؤسسة هذا الفضاء الأدبي. أحب قراءة وكتابة الروايات، ونهدف لربط الكُتّاب بالقرّاء حول العالم. نساعد المؤلفين على نشر أعمالهم وترجمتها، ومنح صوت لمن لا يمتلكون الإمكانيات التقليدية.",
+    team:"يُدار موقع Velvet Tomes بواسطة 1234 وHarlyn، لنشارك جمال الأدب العربي مع القرّاء حول العالم.",
+    thanks:"شكراً لزيارتكم الموقع."
+  },
+  en:{
+    welcome:"Welcome to Velvet Tomes",
+    intro:"Our platform is a literary space aimed at building bridges between authors and readers worldwide. We allow writers to publish their novels and translate them, and allow those with the author's permission to share their works. Our goal is to introduce the world to Arabic literature and give opportunities to authors who lack resources for printed publication.",
+    aboutTitle:"About Us",
+    aboutText:"Meet the creative minds behind Velvet Tomes, people passionate about sharing the beauty of the literary world.",
+    harlyn:"I am Harlyn, a writer who breathes words and transforms them into worlds full of mystery and human conflicts. I write to reveal the hidden aspects of the human soul. My role includes reviewing novels, designing covers, and writing/publishing some stories.",
+    programmer:"I am 1234, founder of this literary space. We help authors publish and translate their works, giving a voice to those who lack traditional resources.",
+    team:"Velvet Tomes is run by 1234 and Harlyn, sharing the beauty of Arabic literature with readers worldwide.",
+    thanks:"Thank you for visiting the site."
+  }
 };
 
-function chooseLanguage(lang) {
-    const popup = document.getElementById('langPopup');
-    const container = document.getElementById('main-content');
-    popup.style.display = 'none';
-
-    if(lang === 'ar') {
-        container.style.direction = 'rtl';
-        container.style.textAlign = 'right';
-    } else {
-        container.style.direction = 'ltr';
-        container.style.textAlign = 'left';
-    }
-
-    document.getElementById('welcome').textContent = texts[lang].welcome;
-    document.getElementById('intro').textContent = texts[lang].intro;
-    document.getElementById('about-title').textContent = texts[lang].aboutTitle;
-    document.getElementById('about-text').textContent = texts[lang].aboutText;
-    document.getElementById('harlyn').textContent = texts[lang].harlyn;
-    document.getElementById('programmer').textContent = texts[lang].programmer;
-    document.getElementById('team').textContent = texts[lang].team;
-    document.getElementById('thanks').textContent = texts[lang].thanks;
+function showLangPopup(){
+  document.getElementById('langPopup').classList.add('show');
+  document.getElementById('main-content').style.display='none';
+  document.getElementById('footer').style.display='none';
+  document.getElementById('logo').classList.remove('top');
 }
+
+function chooseLanguage(lang){
+  const container=document.getElementById('main-content');
+  const popup=document.getElementById('langPopup');
+  const footer=document.getElementById('footer');
+  const logo=document.getElementById('logo');
+
+  popup.classList.remove('show');
+  container.style.display='block';
+  footer.style.display='flex';
+  logo.classList.add('top');
+
+  if(lang==='ar'){ document.body.style.direction='rtl'; container.style.textAlign='right'; }
+  else { document.body.style.direction='ltr'; container.style.textAlign='left'; }
+
+  document.getElementById('welcome').textContent=texts[lang].welcome;
+  document.getElementById('intro').textContent=texts[lang].intro;
+  document.getElementById('about-title').textContent=texts[lang].aboutTitle;
+  document.getElementById('about-text').textContent=texts[lang].aboutText;
+  document.getElementById('harlyn').textContent=texts[lang].harlyn;
+  document.getElementById('programmer').textContent=texts[lang].programmer;
+  document.getElementById('team').textContent=texts[lang].team;
+  document.getElementById('thanks').textContent=texts[lang].thanks;
+}
+
+function toggleDarkMode(){ document.body.classList.toggle('dark'); }
+
+window.onload=function(){ setTimeout(showLangPopup,1000); };
 </script>
 
 </body>
