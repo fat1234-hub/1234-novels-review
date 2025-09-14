@@ -39,10 +39,52 @@
   #darkModeBtn, #changeLangBtn { margin-top:10px; padding:10px 20px; cursor:pointer; border-radius:8px; border:none; font-weight:bold; background:#e0bcbc; transition:0.3s; }
   #darkModeBtn:hover, #changeLangBtn:hover { background:darkred; color:#fff; }
 
-  @media(max-width:600px){ 
-    .logo{font-size:60px;} 
-    .container{padding:16px;} 
-    #darkModeBtn, #changeLangBtn { width:100%; font-size:16px; padding:12px; } 
+  /* 📱 تحسين للموبايل */
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 60px; 
+      margin: 20px 0;
+    }
+
+    .container {
+      width: 90%;
+      padding: 16px;
+      margin: 20px auto;
+    }
+
+    ul {
+      padding: 14px 20px;
+      font-size: 14px;
+    }
+
+    li {
+      font-size: 14px;
+    }
+
+    #darkModeBtn, #changeLangBtn {
+      width: 100%;
+      font-size: 16px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 45px; 
+    }
+
+    h1, h2 {
+      font-size: 18px;
+    }
+
+    p, li {
+      font-size: 14px;
+    }
+
+    .container {
+      padding: 12px;
+    }
   }
 </style>
 </head>
