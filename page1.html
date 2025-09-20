@@ -2,16 +2,18 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="بوليسية نفسية, مذكرة قاتل, سخرية سوداء, رواية عربية معاصرة, جريمة وانتقام">
-<title>مائة جريمة وإبتسامة || One Hundred Crimes and a Smile</title>
+<meta name="keywords" content="روايات, مراجعة, أدب, خيال, فنتازيا, رعب, عربية, English">
+<meta name="google-site-verification" content="Wt57u89z0ilNwkXHgOu0QcuHRaBqnWKD0pp7fCNBumA" />
+<title>مائة جريمة وابتسامة || One Hundred Crimes and a Smile</title>
 <link rel="icon" type="image/png" href="icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+<!-- نفس الخطوط (مطابقة للصفحة الأولى) -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo&family=Merriweather&family=Mea+Culpa&display=swap" rel="stylesheet">
 <style>
-  body { margin:0; padding:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f6f2; color:#232025; transition: background 0.3s, color 0.3s; }
+  body { margin:0; padding:0; font-family:'Cairo', sans-serif; background:#f9f6f2; color:#232025; transition: background 0.3s, color 0.3s; }
   body.dark { background:#1e1e1e; color:#f9f6f2; }
 
-  .logo { font-family:'Mea Culpa', cursive; font-size:60px; font-weight:bold; text-align:center; margin-top:20px; }
-  .title { font-family:'Mea Culpa', cursive; font-size:45px; font-weight:bold; text-align:center; margin:20px 0; color:darkred; }
+  .logo { font-family:'Mea Culpa', cursive; font-size:90px; font-weight:bold; text-align:center; margin-top:20px; }
+  .title { font-family:'Mea Culpa', cursive; font-size:45px; font-weight:bold; text-align:center; margin:10px 0; color:darkred; }
 
   .lang-popup { position:fixed; top:0; left:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; flex-direction:column; background:rgba(249,246,242,0.95); z-index:2; opacity:0; pointer-events:none; transition:opacity 0.5s; }
   .lang-popup.show { opacity:1; pointer-events:auto; }
@@ -19,10 +21,10 @@
   .lang-popup button { margin:10px; padding:12px 25px; font-weight:bold; border:none; border-radius:8px; cursor:pointer; background:#e0bcbc; transition:0.3s; font-size:16px; }
   .lang-popup button:hover { background:darkred; color:#fff; }
 
-  .home-link { margin:20px; font-weight:bold; font-size:16px; text-decoration:none; color:darkred; }
+  .home-link { display:inline-block; margin:20px auto; font-weight:bold; font-size:16px; text-decoration:none; color:darkred; text-align:center; }
   .home-link:hover { text-decoration:underline; }
 
-  .container { max-width:750px; margin:20px auto; padding:24px; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08); display:none; transition: background 0.3s; }
+  .container { max-width:750px; margin:20px auto; padding:24px; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08); display:none; transition: background 0.3s; font-family:'Cairo', sans-serif; }
   body.dark .container { background:#2a2a2a; }
 
   .Bordered, .Bordered2 { border-radius:8px; box-shadow:0 2px 8px rgba(128,0,0,0.07); margin-bottom:18px; background:#fff8f8; border:1.5px solid #e0bcbc; color:inherit; padding:14px; transition: background 0.3s; line-height:1.6; }
@@ -30,20 +32,20 @@
 
   .cover { width:80%; max-width:400px; border-radius:12px; margin:20px auto; display:block; }
 
-  blockquote { background:#fff0f0; border-left:4px solid darkred; padding:12px 16px; margin:12px 0; border-radius:8px; font-style:italic; line-height:1.6; }
+  blockquote { background:#fff0f0; border-left:4px solid darkred; padding:12px 16px; margin:12px 0; border-radius:8px; font-style:italic; line-height:1.6; font-family:'Cairo', sans-serif; }
   body.dark blockquote { background:#3a3a3a; border-left:4px solid #ff4c4c; }
 
-  h2{text-align:center;color:darkred; margin-top:30px;}
-  ul { list-style-type: disc; background:#fff; border-radius:8px; padding:18px 32px; color:#232025; border:1.5px solid #e0bcbc; box-shadow:0 2px 8px rgba(128,0,0,0.05); transition: background 0.3s; }
+  h2 { text-align:center; color:darkred; margin-top:30px; font-family:'Merriweather', serif; }
+  ul { list-style-type: disc; background:#fff; border-radius:8px; padding:18px 32px; color:#232025; border:1.5px solid #e0bcbc; box-shadow:0 2px 8px rgba(128,0,0,0.05); transition: background 0.3s; font-family:'Cairo', sans-serif; }
   body.dark ul, body.dark li { color:#f9f6f2; background:#3a3a3a; border-color:#555; }
   li { margin-bottom:10px; font-size:16px; }
 
-  footer { display:flex; flex-direction:column; align-items:center; margin-top:50px; font-family:Arial,sans-serif; }
-  footer a { text-decoration:none; font-weight:bold; margin:5px; transition: transform 0.3s; }
+  footer { display:flex; flex-direction:column; align-items:center; margin-top:30px; font-family:'Cairo', sans-serif; padding-bottom:20px; display:none; }
+  footer a { text-decoration:none; font-weight:bold; margin:5px; transition: transform 0.3s; font-size:16px; }
   footer a:hover { transform:scale(1.1); }
-  footer a.wattpad { color:#ff5415; }
+  footer a.wattpad { color:darkred; font-weight:bold; }
 
-  #darkModeBtn, #changeLangBtn, #readWattpadBtn { margin-top:10px; padding:10px 20px; cursor:pointer; border-radius:8px; border:none; font-weight:bold; background:#e0bcbc; transition:0.3s; }
+  #darkModeBtn, #changeLangBtn, #readWattpadBtn { margin-top:10px; padding:10px 20px; cursor:pointer; border-radius:8px; border:none; font-weight:bold; background:#e0bcbc; transition:0.3s; font-family:'Cairo', sans-serif; }
   #darkModeBtn:hover, #changeLangBtn:hover, #readWattpadBtn:hover { background:darkred; color:#fff; }
 
   @media (max-width: 768px) {
@@ -52,6 +54,7 @@
     .container { width:90%; padding:16px; }
     blockquote, li { font-size:14px; }
     #darkModeBtn, #changeLangBtn, #readWattpadBtn { width:100%; font-size:16px; padding:12px; }
+    footer a.wattpad { font-size:16px; }
   }
 
   @media (max-width: 480px) {
@@ -60,15 +63,16 @@
     h2 { font-size:18px; }
     p, li { font-size:14px; }
     .container { padding:12px; }
+    footer a.wattpad { font-size:14px; }
   }
 </style>
 </head>
 <body>
+<!-- باقي الكود (النصوص + السكربت) كما هو عندك -->
+<div class="logo" id="logo">Velvet Tomes</div>
+<div class="title">مائة جريمة وابتسامة || One Hundred Crimes and a Smile</div>
 
-<div class="logo">Velvet Tomes</div>
-<div class="title">مائة جريمة وإبتسامة || One Hundred Crimes and a Smile</div>
-
-<div style="text-align:right; margin:20px;">
+<div style="text-align:center;">
   <a href="index.html" class="home-link">Home</a>
 </div>
 
@@ -99,13 +103,13 @@
   <blockquote id="quote8"></blockquote>
   <blockquote id="quote9"></blockquote>
 
-  <button id="readWattpadBtn" onclick="window.open('https://www.wattpad.com/story/400929834','_blank')">اقرأ على Wattpad</button>
+  <button id="readWattpadBtn" onclick="window.open('https://www.wattpad.com/story/400929834','_blank')">Read on Wattpad</button>
   <button id="darkModeBtn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-  <button id="changeLangBtn" onclick="showLangPopup()">🌐 Change Language</button>
+  <button id="changeLangBtn" onclick="forceShowLangPopup()">🌐 Change Language</button>
 </div>
 
-<footer>
-  <a href="https://www.wattpad.com/user/Roza_Royce" target="_blank" class="wattpad">قناة الكاتبة</a>
+<footer id="footer">
+  <a href="https://www.wattpad.com/user/Roza_Royce" target="_blank" class="wattpad">Author's Channel</a>
 </footer>
 
 <div class="lang-popup" id="langPopup">
@@ -116,82 +120,104 @@
 
 <script>
 const texts = {
-  ar:{
+  ar: {
     authorTitle:"تعريف الكاتبة",
-    authorText:"أُدعى روز، كاتبة و روائية جزائرية.اكتشفتُ شغفي بالحروف منذ سن صغيرة جدا، ومنذ ذلك الحين لم يُفارق الحبر أناملي.أحمل شغف الحكاية بين يدي وجرأة الغوص في العوالم النفسية والانسانية، أهتم بالجانب النفسي والإنساني المظلم للشخصيات، وأُعرف بأسلوبي البلاغي الشاعري الذي يمزج بين السخرية السوداء والعمق الفلسفي. وتُركز أعمالي على الغوص في خفايا العقول، حيث يتحول الحب والخيانة ،الألم والجنون والجرائم إلى نصوص أدبية ذات بُعد وجودي وفني. من أبرز سماتي أنني أكتب لأكشف الجانب الخفي من الروح، ولأصنع من التشويق والغموض مرايا يرى القارئ فيها ذاته ومخاوفه وأحلامه. فأعمالي لا تكتفي بسرد الأحداث، بل تمنح القارئ تجربة متكاملة تمزج بين المتعة الفكرية والانفعال العاطفي.",
+    authorText:"أُدعى روز، كاتبة و روائية جزائرية. اكتشفتُ شغفي بالحروف منذ سن صغيرة جدا، ومنذ ذلك الحين لم يُفارق الحبر أناملي. أحمل شغف الحكاية بين يدي وجرأة الغوص في العوالم النفسية والانسانية، أهتم بالجانب النفسي والإنساني المظلم للشخصيات، وأُعرف بأسلوبي البلاغي الشاعري الذي يمزج بين السخرية السوداء والعمق الفلسفي. وتُركز أعمالي على الغوص في خفايا العقول، حيث يتحول الحب والخيانة، الألم والجنون والجرائم إلى نصوص أدبية ذات بُعد وجودي وفني. من أبرز سماتي أنني أكتب لأكشف الجانب الخفي من الروح، ولأصنع من التشويق والغموض مرايا يرى القارئ فيها ذاته ومخاوفه وأحلامه.",
     prefaceTitle:"تمهيد",
     prefaceText:"في زمنٍ تُقاسُ فيهُ الجرائمُ بعددِ الثواني، تأتي هذه المذكرةُ لتؤكّدَ أنَّ الأذى قد يُصاغُ فناً، وأن الفنَّ قد يشرِّعُ لغرباءَ قلبكَ أن يَسكنوه. «مئةُ جريمةٍ وابتسامة» ليست فقط سرداً لجناةٍ ومطاردةٍ؛ هي مراياتُ نفسٍ تحنُّ إلى الانفراد، وتبني من آلامِ الآخرينِ قصائدَ لذيذةً.\n\nكتبتها يدٌ طفليّةٌ، ثمّ نُقِّحتْ بأظافرِ رجلٍ عرف أنَّ العالم لا يليقُ به. في صفحاتها ثراءُ السخريةِ والفلسفةِ السوداءِ، وفي باطنِها سؤالٌ واحدٌ يلحّ: هل يُحتّمُ الجرحُ على من جُرح أن يبدعَ انتقامَه؟ أم أنَّ الإبداعَ ذاته هو مجرّدُ مِرآةٍ للوحشة؟\n\nاقرؤوها إن شئتم أن تلتقوا بفَنٍّ لا يرحمُ، وبقلبٍ سرقَ حريّتَهُ من قبضةِ المجتمعِ ثمّ سربَهُ لكِ لتقرئيه.",
     summaryTitle:"ملخص الرواية",
-    summaryText:"مئةُ جريمةٍ وابتسامة روايةٌ على هيئةِ مذكرةٍ خصّ بها قاتلٌ غامض محقّقتهُ. يبدأ الفلاح الصغير منذ اثنتي عشرة سنةٍ تُدوّنُ خِفَّةَ يدهِ جرائمه؛ من «طعنةٍ» طفوليّةٍ إلى «لوحاتٍ» قاتلةٍ تُعرض على مسارح المدينة. كلُّ صفحةٍ رسالةٌ مُرهفةٌ وساخرةٌ إلى تلك المرأةِ التي طاردته طويلاً، تكشف في طيفٍ متدرجٍ عن ماضيها، عن ألسنةٍ أوسعت سُخرية حياته وأوجعتها، وعن شبكةٍ من أنصاف الحقائق والأسماء القديمة التي تشكّلُ دوافعَ الفاعل.\n\nتتصاعدُ المذكرة مع تقدّمِ العمر: من تجاربٍ طفوليّةٍ إلى جرائمٍ نضجتْ بفنٍّ باردٍ، حتى يبلغ القاتلُ رقمَهُ المئوي، حيث تُفاجأ المحقّقةُ بصفحةٍ فارغةٍ—لتكتشف أنّ الجريمة الأخيرة لم تكن مقتلًا بل مفاجئة!.\nروايةٌ تجمعُ بين البوليسيّ النفسيّ، السردُ المذكراتيُّ، والبلاغةُ الجاهليّةُ الشعريةُ، فتدورُ في عوالمِ الانتقامِ، الحبِّ المعيبِ، والفنِّ الذي لا يستأذن.",
-    quotesTitle:"اقتباسات"
+    summaryText:"مئةُ جريمةٍ وابتسامة روايةٌ على هيئةِ مذكرةٍ خصّ بها قاتلٌ غامض محقّقتهُ. يبدأ الفلاح الصغير منذ اثنتي عشرة سنةٍ تُدوّنُ خِفَّةَ يدهِ جرائمه؛ من «طعنةٍ» طفوليّةٍ إلى «لوحاتٍ» قاتلةٍ تُعرض على مسارح المدينة. كلُّ صفحةٍ رسالةٌ مُرهفةٌ وساخرةٌ إلى تلك المرأةِ التي طاردته طويلاً، تكشف في طيفٍ متدرجٍ عن ماضيها، عن ألسنةٍ أوسعت سُخرية حياته وأوجعتها، وعن شبكةٍ من أنصاف الحقائق والأسماء القديمة التي تشكّلُ دوافعَ الفاعل.\n\nتتصاعدُ المذكرة مع تقدّمِ العمر: من تجاربٍ طفوليّةٍ إلى جرائمٍ نضجتْ بفنٍّ باردٍ، حتى يبلغ القاتلُ رقمَهُ المئوي، حيث تُفاجأ المحقّقةُ بصفحةٍ فارغةٍ—لتكتشف أنّ الجريمة الأخيرة لم تكن مقتلًا بل مفاجئة! روايةٌ تجمعُ بين البوليسيّ النفسيّ، السردُ المذكراتيُّ، والبلاغةُ الشعريةُ، فتدورُ في عوالمِ الانتقامِ، الحبِّ المعيبِ، والفنِّ الذي لا يستأذن.",
+    quotesTitle:"الاقتباسات",
+    quotes:[
+      "كتبتُ لأنّ العالم لم يستدعِفني فنّانًا سوى بدماءِ الآخرين.",
+      "الموجةُ الواحدةُ تمنحُ القبرَ لونًا… وذائقتي تفضّل الأزرق.",
+      "الفنُّ لا يحتاج إلى إذن؛ يكفي أن تكون وحيدًا لتبدعه.",
+      "أردتُ أن أعلّمَهم معنى الخوفِ، فكانت تجربتي الأولى على الجسدِ البسيطِ.",
+      "سأصلُ، يوماً، إلى الصفحةِ التي لا يعودُ فيها الحبرُ قادراً على وصفي.",
+      "ما بين الضحك والصرخةِ فاصلٌ نحيلٌ؛ وأنا أحبُّ السيرَ فوقه بلا خوف.",
+      "أكتبُ لأخلّدَ ما لا يفهمه العامُّون: أنّ الانتقامَ قد يكونُ ترنيمةً.",
+      "سرقْتُ قلوبًا قبل أن أُسرقَ قلبًا؛ الفارق أنني أوقفتُ الأولى، وأحييتُ الثاني",
+      "إنهاءُ حياةٍ ليس إلا فصلًا في نصي؛ أما النهايةُ الحقيقية فحين يقرّ القارئُ بأنّه تواطأ.",
+      "أنتِ—يا محقّقتي—آخرُ حُجّتي في أن الفنّ يفرضُ سطوتهُ على القوانين."
+    ]
   },
-  en:{
+  en: {
     authorTitle:"About the Author",
-    authorText:"My name is Roza, an Algerian writer and novelist. I discovered my passion for letters at a very young age, and since then ink has never left my fingers. I carry the passion for storytelling in my hands and the courage to dive into the psychological and human worlds. I focus on the dark psychological and human side of characters, and I am known for my poetic and rhetorical style that blends black humor with philosophical depth. My works explore the hidden corners of minds, where love, betrayal, pain, madness, and crimes turn into literary texts with existential and artistic dimensions. One of my main traits is that I write to reveal the hidden side of the soul, creating mirrors of suspense and mystery in which the reader sees themselves, their fears, and dreams. My works provide a full experience combining intellectual pleasure with emotional involvement.",
+    authorText:"My name is Roza, an Algerian writer and novelist. I discovered my passion for letters at a very young age, and since then ink has never left my fingers. I carry the passion of storytelling in my hands and the courage to dive into psychological and human worlds. My work focuses on the dark human and psychological side of characters, blending black humor and philosophical depth. I write to reveal the hidden side of the soul, turning suspense and mystery into mirrors where the reader sees themselves, their fears, and dreams.",
     prefaceTitle:"Preface",
-    prefaceText:"In an era where crimes are measured in seconds, this notebook confirms that harm can be transformed into art, and that art may allow strangers to inhabit your heart. 'One Hundred Crimes and a Smile' is not just a tale of criminals and pursuit; it is a mirror of a soul longing for solitude, building delicious poems from others' pain.\n\nIt was written by a child's hand, then refined by a man who knew the world did not fit him. Its pages contain the richness of black humor and philosophy, with one pressing question: Does injury compel the wounded to create revenge? Or is creation itself merely a mirror of desolation?\n\nRead it if you wish to encounter art that spares no one, and a heart that stole its freedom from society and then delivered it to you.",
+    prefaceText:"In a time when crimes are measured in seconds, this diary confirms that harm can be crafted into art, and that art may legitimize strangers of your heart to dwell there. 'One Hundred Crimes and a Smile' is not just a narration of criminals and pursuit; it is a reflection of a soul yearning for solitude and building delicious poems from others' pains.\n\nWritten by a child's hand, then revised by a man who knew the world did not suit him. Its pages contain the richness of dark satire and philosophy, asking whether the wounded must create their revenge, or if creation itself is merely a mirror of desolation.\n\nRead it if you wish to encounter a merciless art and a heart that stole its freedom from society, then delivered it to you to read.",
     summaryTitle:"Summary",
-    summaryText:"'One Hundred Crimes and a Smile' is a novel in the form of a notebook dedicated by a mysterious killer to his detective. The small farmer begins at age twelve to record his crimes lightly; from a 'childish stab' to 'deadly paintings' displayed on city stages. Each page is a delicate and sarcastic message to the woman who pursued him, gradually revealing her past, the tongues that widened his life's mockery and pain, and a web of half-truths and old names that form the perpetrator's motives.\n\nThe notebook escalates with age: from childish experiments to crimes matured with cold art, until the killer reaches his hundredth number, where the detective finds a blank page—to discover that the last crime was not a murder but a surprise! The novel combines psychological crime, memoir-like narration, and poetic rhetoric, revolving around worlds of revenge, flawed love, and unconsented art.",
-    quotesTitle:"Quotes"
+    summaryText:"'One Hundred Crimes and a Smile' is a diary-style novel written by a mysterious killer to his investigator. The small farmer begins at twelve, recording his crimes; from childish 'stabs' to deadly 'paintings' displayed on city stages. Each page is a delicate and sarcastic message to the woman who pursued him, revealing her past, the tongues that widened the mockery of his life, and a network of half-truths and old names that form the actor's motives.\n\nThe diary escalates with age: from childish experiments to crimes matured with cold art, until the killer reaches the hundredth mark, where the investigator is surprised by a blank page—to discover the last crime was not a murder but a surprise! The novel blends psychological thriller, diary narration, and poetic eloquence, revolving around revenge, flawed love, and art that asks no permission.",
+    quotesTitle:"Quotes",
+    quotes:[
+      "I wrote because the world only recognized me as an artist through the blood of others.",
+      "A single wave gives the grave color… and my taste prefers blue.",
+      "Art doesn't need permission; it's enough to be alone to create it.",
+      "I wanted to teach them the meaning of fear, and my first experiment was on a simple body.",
+      "One day I will reach the page where ink can no longer describe me.",
+      "Between laughter and scream lies a thin line; I love walking it without fear.",
+      "I write to immortalize what the common folk do not understand: that revenge can be a hymn.",
+      "I stole hearts before mine was stolen; the difference is I stopped the first and revived the second.",
+      "Ending a life is just a chapter in my text; the real ending is when the reader realizes they conspired.",
+      "You—my investigator—are my last argument that art imposes its authority over the law."
+    ]
   }
 };
 
-const quotes = {
-  ar:[
-    "كتبتُ لأنّ العالم لم يستدعِفني فنّانًا سوى بدماءِ الآخرين.",
-    "الموجةُ الواحدةُ تمنحُ القبرَ لونًا… وذائقتي تفضّل الأزرق.",
-    "الفنُّ لا يحتاج إلى إذن؛ يكفي أن تكون وحيدًا لتبدعه.",
-    "أردتُ أن أعلّمَهم معنى الخوفِ، فكانت تجربتي الأولى على الجسدِ البسيطِ.",
-    "سأصلُ، يوماً، إلى الصفحةِ التي لا يعودُ فيها الحبرُ قادراً على وصفي.",
-    "ما بين الضحك والصرخةِ فاصلٌ نحيلٌ؛ وأنا أحبُّ السيرَ فوقه بلا خوف.",
-    "أكتبُ لأخلّدَ ما لا يفهمه العامُّون: أنّ الانتقامَ قد يكونُ ترنيمةً.",
-    "سرقْتُ قلوبًا قبل أن أُسرقَ قلبًا؛ الفارق أنني أوقفتُ الأولى، وأحييتُ الثاني",
-    "أنتِ—يا محقّقتي—آخرُ حُجّتي في أن الفنّ يفرضُ سطوتهُ على القوانين."
-  ],
-  en:[
-    "I wrote because the world never recognized me as an artist except through the blood of others.",
-    "A single wave gives the grave a color… and my taste prefers blue.",
-    "Art doesn't need permission; it’s enough to be alone to create it.",
-    "I wanted to teach them the meaning of fear; my first experience was on a simple body.",
-    "One day, I will reach the page where ink can no longer describe me.",
-    "Between laughter and scream lies a thin line; I love walking over it without fear.",
-    "I write to immortalize what the masses do not understand: that revenge can be a chant.",
-    "I stole hearts before my own was stolen; the difference is I stopped the first, and revived the second.",
-    "You—my detective—are my last argument that art imposes its power over laws."
-  ]
-};
-
 function showLangPopup(){
-  document.getElementById('langPopup').classList.add('show');
-  document.getElementById('main-content').style.display='none';
+  if(!localStorage.getItem('selectedLang')){
+    document.getElementById('langPopup').classList.add('show');
+    document.getElementById('main-content').style.display='none';
+    document.getElementById('footer').style.display='none';
+  }
 }
 
 function chooseLanguage(lang){
-  const container=document.getElementById('main-content');
-  const popup=document.getElementById('langPopup');
-  popup.classList.remove('show');
-  container.style.display='block';
+  localStorage.setItem('selectedLang', lang);
+  const t = texts[lang];
+  document.getElementById('author-title').innerText = t.authorTitle;
+  document.getElementById('author-text').innerText = t.authorText;
+  document.getElementById('preface-title').innerText = t.prefaceTitle;
+  document.getElementById('preface-text').innerText = t.prefaceText;
+  document.getElementById('summary-title').innerText = t.summaryTitle;
+  document.getElementById('summary-text').innerText = t.summaryText;
+  document.getElementById('quotes-title').innerText = t.quotesTitle;
+  t.quotes.forEach((q,i)=>{
+    const el = document.getElementById('quote'+(i+1));
+    if(el) el.innerText = q;
+  });
 
-  if(lang==='ar'){ document.body.style.direction='rtl'; container.style.textAlign='right'; }
-  else { document.body.style.direction='ltr'; container.style.textAlign='left'; }
+  if(lang === 'ar'){
+    document.body.style.direction = 'rtl';
+    document.getElementById('main-content').style.textAlign = 'right';
+  } else {
+    document.body.style.direction = 'ltr';
+    document.getElementById('main-content').style.textAlign = 'left';
+  }
 
-  document.getElementById('author-title').textContent=texts[lang].authorTitle;
-  document.getElementById('author-text').textContent=texts[lang].authorText;
-
-  document.getElementById('preface-title').textContent=texts[lang].prefaceTitle;
-  document.getElementById('preface-text').textContent=texts[lang].prefaceText;
-
-  document.getElementById('summary-title').textContent=texts[lang].summaryTitle;
-  document.getElementById('summary-text').textContent=texts[lang].summaryText;
-
-  document.getElementById('quotes-title').textContent=texts[lang].quotesTitle;
-  for(let i=0;i<9;i++){ document.getElementById('quote'+(i+1)).textContent = quotes[lang][i]; }
+  document.getElementById('langPopup').classList.remove('show');
+  document.getElementById('main-content').style.display = 'block';
+  document.getElementById('footer').style.display = 'flex';
 }
 
-function toggleDarkMode(){ document.body.classList.toggle('dark'); }
+function forceShowLangPopup(){
+  document.getElementById('langPopup').classList.add('show');
+  document.getElementById('main-content').style.display = 'none';
+  document.getElementById('footer').style.display = 'none';
+}
 
-// عند فتح الصفحة لأول مرة نعرض Popup اللغة
-showLangPopup();
+function toggleDarkMode(){
+  document.body.classList.toggle('dark');
+}
+
+window.onload = function(){
+  const saved = localStorage.getItem('selectedLang');
+  if(saved){
+    chooseLanguage(saved);
+  } else {
+    setTimeout(showLangPopup, 800);
+  }
+};
 </script>
 
 </body>
